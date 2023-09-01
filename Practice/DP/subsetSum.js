@@ -34,3 +34,25 @@ console.log(f(array, array.length - 1, target, dp));
 
 //////////////
 /// Tabulation.....
+// let array=[1,2,3,4];
+// let target=6;
+// let dp=Array.from({length:array.length},()=>Array(target+1).fill(false));
+function f(arr, index, target, dp) {
+  for (let i = 0; i < index; i++) {
+    dp[i][0] = true;
+  }
+  dp[0][arr[0]] = true;
+
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = 1; j <= target; j++) {
+      let notpick = dp[i - 1][j];
+      let pick = false;
+      if (target > arr[i]) {
+        pick = dp[i - 1][j - arr[i]];
+      }
+      dp[i][j] = pick || notpick;
+    }
+  }
+
+  return dp[index][target];
+}
