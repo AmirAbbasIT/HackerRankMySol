@@ -27,10 +27,6 @@ const App = () => {
     setId(id=>id===0?images.length-1:id-1)
   }
 
-  const handleAutoPlay=()=>{
-    
-  }
-
   useEffect(()=>{
 
     if(autoplay){
