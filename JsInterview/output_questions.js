@@ -144,7 +144,7 @@
 
 // How to return array from reduce function as it returns single value....
 // [1,2,3].reduce((initial,value,index)=>{
-//     initial.push(value);
+//     initial=[...initial,value]
 //     return value;
 // },[] // its initial value to reduce function)
 
@@ -259,3 +259,12 @@
 // const y = 1;
 // console.log(x == y, x === y);
 // true , false
+
+// Check weather an object or not...
+// function isObject(o) {
+//     return o !== null && typeof o === 'object' && Array.isArray(o) === false;
+//   }
+//or//
+// function isObject(o) {
+//     return o instanceof Object && o.constructor === Object;
+// }
